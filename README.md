@@ -21,14 +21,14 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 
 1. User asks a query to the AR Avatar (mobile app).
-2. Mobile application converts the speech to text using Watson speech to text and sends the query to IBM Mobile Foundation.
-3. IBM Mobile Foundation securely passes the query to Watson Assistant.
-4. Watson Assistant triggers the appropriate IBM Cloud Function, based on the query received.
-5. Based on the query, IBM Cloud Function triggers the appropriate service or services, in the backend server application.
+2. Mobile application converts the speech to text using Watson speech to text and sends the query to   Mobile Foundation.
+3.   Mobile Foundation securely passes the query to Watson Assistant.
+4. Watson Assistant triggers the appropriate   Cloud Function, based on the query received.
+5. Based on the query,   Cloud Function triggers the appropriate service or services, in the backend server application.
 6. Backend server application returns the response for the query.
-7. IBM Cloud Function sends the response to Watson Assistant.
-8. Watson Assistant frames a response to reply to the user and sends it to IBM Mobile Foundation.
-9. IBM Mobile Foundation securely sends the response to the mobile application.
+7.   Cloud Function sends the response to Watson Assistant.
+8. Watson Assistant frames a response to reply to the user and sends it to   Mobile Foundation.
+9.   Mobile Foundation securely sends the response to the mobile application.
 10. Mobile application converts the text into speech using Watson Text to Speech.
 11. Mobile application replies to the user using the AR Avatar.
 
@@ -38,7 +38,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 [![](https://img.youtube.com/vi/NOX_uWVymco/0.jpg)](https://youtu.be/NOX_uWVymco)
 
 ## Pre-requisites
-* [IBM Cloud account](https://www.ibm.com/cloud/): Create an IBM Cloud account.
+* [  Cloud account](https://www. .com/cloud/): Create an   Cloud account.
 * [Python 3](https://www.python.org/downloads/): Install python 3.
 * [Java 1.8.x](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9): Make sure you have required version (Java 1.8.x).
 * Before you begin please note that this application uses AR-Core Library, and not all Android devices support AR-Core. To know which devices support AR-Core visit the [Supported Devices](https://developers.google.com/ar/discover/supported-devices) page.
@@ -50,40 +50,40 @@ When the reader has completed this Code Pattern, they will understand how to:
 Please follow the below to setup and run this code pattern.
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Create Watson services with IBM Cloud](#2-create-watson-services-with-ibm-cloud)
+2. [Create Watson services with   Cloud](#2-create-watson-services-with- -cloud)
 3. [Update the details in the Backend Flask Application](#3-update-the-details-in-the-backend-flask-application)
 4. [Deploy the Flask Application](#4-deploy-the-flask-application)
 5. [Setup Cloud Functions](#5-setup-cloud-functions)
 6. [Setup Watson Assistant](#6-setup-watson-assistant)
-7. [Setup IBM Mobile Foundation Server and CLI](#7-setup-ibm-mobile-foundation-server-and-cli)
+7. [Setup   Mobile Foundation Server and CLI](#7-setup- -mobile-foundation-server-and-cli)
 8. [Setup Google Cloud Anchors](#8-setup-google-cloud-anchors)
 9. [Configure Android App](#9-configure-android-app)
 10. [Build and Run Android App](#10-build-and-run-android-app)
 
 ### 1. Clone the repo
 
-Clone this [git repo](https://github.com/IBM/avatar-based-dynamic-chatbot-with-ai-and-ar-capabilities.git).
+Clone this [git repo](https://github.com/ /avatar-based-dynamic-chatbot-with-ai-and-ar-capabilities.git).
 Else, in a terminal, run:
 
 ```
-$ https://github.com/IBM/avatar-based-dynamic-chatbot-with-ai-and-ar-capabilities.git
+$ https://github.com/ /avatar-based-dynamic-chatbot-with-ai-and-ar-capabilities.git
 ```
 
-### 2. Create Watson services with IBM Cloud
+### 2. Create Watson services with   Cloud
 
 Create the following services:
 
-* [**Watson Assistant**](https://cloud.ibm.com/catalog/services/watson-assistant): Create a Watson Assistant instance on your IBM cloud.
-* [**IBM Cloud Functions**](https://cloud.ibm.com/functions): Create an IBM Cloud Functions instance on your IBM cloud.
-* [**Speech to Text**](https://cloud.ibm.com/catalog/services/speech-to-text): Create a Speech to Text instance on your IBM cloud.
-* [**Text to Speech**](https://cloud.ibm.com/catalog/services/text-to-speech): Create a Text to Speech instance on your IBM cloud.
-* [**Mobile Foundation**](https://cloud.ibm.com/catalog/services/mobile-foundation): Create a Mobile Foundation instance on Your IBM Cloud.
+* [**Watson Assistant**](https://cloud. .com/catalog/services/watson-assistant): Create a Watson Assistant instance on your   cloud.
+* [**  Cloud Functions**](https://cloud. .com/functions): Create an   Cloud Functions instance on your   cloud.
+* [**Speech to Text**](https://cloud. .com/catalog/services/speech-to-text): Create a Speech to Text instance on your   cloud.
+* [**Text to Speech**](https://cloud. .com/catalog/services/text-to-speech): Create a Text to Speech instance on your   cloud.
+* [**Mobile Foundation**](https://cloud. .com/catalog/services/mobile-foundation): Create a Mobile Foundation instance on Your   Cloud.
 
 ### 3. Update the details in the Backend Flask Application
 * Visit the url [Zomato API](https://developers.zomato.com/api) to generate the Api Key for running the application. 
 * hit the green colored button `Generate API KEY `.
 * Fill the information form. And you will get the `API KEY`. Copy it to Clipboard.
-* Open the [Python Flask File](https://github.ibm.com/raravi86/Avatar/blob/master/flask-api/app.py), go to line number 35 of     the code in the function `getRestaurants(coordinates)` and update the user-key which you have generated in the above step.
+* Open the [Python Flask File](https://github. .com/raravi86/Avatar/blob/master/flask-api/app.py), go to line number 35 of     the code in the function `getRestaurants(coordinates)` and update the user-key which you have generated in the above step.
 
 ```bash
 header = {"User-agent": "curl/7.43.0", "Accept": "application/json", "user-key": "update the user-key here!"}
@@ -93,7 +93,7 @@ header = {"User-agent": "curl/7.43.0", "Accept": "application/json", "user-key":
 ![](doc/source/images/zomato_2.png)
 
 ### 4. Deploy the Flask Application
-* Create a [Cloud Foundry](https://cloud.ibm.com/catalog/starters/cloud-foundry?runtime=python) service with python runtime and follow the steps.
+* Create a [Cloud Foundry](https://cloud. .com/catalog/starters/cloud-foundry?runtime=python) service with python runtime and follow the steps.
 
 ![](doc/source/images/cloudfoundry.png)
 
@@ -105,30 +105,30 @@ header = {"User-agent": "curl/7.43.0", "Accept": "application/json", "user-key":
 $ cd flask-api/
 ```
 
-* Make sure you have installed [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started&locale=en-US) before you proceed.
+* Make sure you have installed [  Cloud CLI](https://cloud. .com/docs/cli?topic=cloud-cli-getting-started&locale=en-US) before you proceed.
 
-* Log in to your IBM Cloud account, and select an API endpoint.
+* Log in to your   Cloud account, and select an API endpoint.
 ```bash
-$ ibmcloud login
+$  cloud login
 ```
 
 >NOTE: If you have a federated user ID, instead use the following command to log in with your single sign-on ID.
 ```bash
-$ ibmcloud login --sso
+$  cloud login --sso
 ```
 
 * Target a Cloud Foundry org and space:
 ```bash
-$ ibmcloud target --cf
+$  cloud target --cf
 ```
 
-* From within the _`flask-api`_ directory push your app to IBM Cloud.
+* From within the _`flask-api`_ directory push your app to   Cloud.
 ```bash
-$ ibmcloud cf push <YOUR_APP_NAME>
+$  cloud cf push <YOUR_APP_NAME>
 ```
 >Example: As our app name is `my-api` we use the following command.
 ```bash
-$ ibmcloud cf push my-api
+$  cloud cf push my-api
 ```
 
 * You will see output on your terminal as shown, verify the state is _`running`_:
@@ -136,7 +136,7 @@ $ ibmcloud cf push my-api
 ```
 Invoking 'cf push'...
 
-Pushing from manifest to org manoj.jahgirdar@in.ibm.com / space dev as manoj.jahgirdar@in.ibm.com...
+Pushing from manifest to org manoj.jahgirdar@in. .com / space dev as manoj.jahgirdar@in. .com...
 
 ...
 
@@ -150,7 +150,7 @@ Waiting for app to start...
 
 * Once the API is deployed and running you can test the API.
 
-* Goto [IBM Cloud Resources](https://cloud.ibm.com/resources) and select the Deployed API, _`my-api`_ in our case. 
+* Goto [  Cloud Resources](https://cloud. .com/resources) and select the Deployed API, _`my-api`_ in our case. 
 
 ![](doc/source/images/resourceslist.png)
 
@@ -163,7 +163,7 @@ Waiting for app to start...
 
 ### 5. Setup Cloud Functions
 
-* Create a [Cloud Function Action](https://cloud.ibm.com/functions/create/action).
+* Create a [Cloud Function Action](https://cloud. .com/functions/create/action).
 
 ![](doc/source/images/cloudfunccreate.png)
 
@@ -296,7 +296,7 @@ function main(params) {
 
 ![](doc/source/images/assistantskillid.png)
 
-### 7. Setup IBM Mobile Foundation Server and CLI
+### 7. Setup   Mobile Foundation Server and CLI
 
 #### 7.1 Setup Ionic and MFP CLI
 
@@ -306,7 +306,7 @@ $ node --version
 v10.15.0
 ```
 
-* Install IBM Mobile Foundation Platform CLI
+* Install   Mobile Foundation Platform CLI
 ```
 $ sudo npm install -g mfpdev-cli
 $ mfpdev --version
@@ -315,7 +315,7 @@ $ mfpdev --version
 
 **Note**: If you are on Windows, instead of using `sudo`, run the above command without `sudo` in a command prompt opened in administrative mode.
 
-> Note: While installing MFP CLI, if you hit an error saying `npm ERR! package.json npm can't find a package.json file in your current directory.`, then it is most likely due to [MFP CLI not being supported in your npm version](https://stackoverflow.com/questions/46168090/ibm-mobile-first-mfpdev-cli-installation-failure). In such a case, downgrade your npm as below, and then install MFP CLI.
+> Note: While installing MFP CLI, if you hit an error saying `npm ERR! package.json npm can't find a package.json file in your current directory.`, then it is most likely due to [MFP CLI not being supported in your npm version](https://stackoverflow.com/questions/46168090/ -mobile-first-mfpdev-cli-installation-failure). In such a case, downgrade your npm as below, and then install MFP CLI.
 `$ sudo npm install -g npm@3.10.10`
 
 * Install Java SDK 8 from https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9
@@ -336,7 +336,7 @@ Apache Maven 3.6.0 ...
 On Windows, you can follow this [Tutorial](https://www.mkyong.com/maven/how-to-install-maven-in-windows/) to install Maven.
 
 #### 7.2 Create Mobile Foundation service and configure MFP CLI
-* In the [IBM Cloud Dashboard](https://cloud.ibm.com/),open [Mobile Foundation](https://cloud.ibm.com/catalog/services/mobile-foundation). Click on `Create` as shown below.
+* In the [  Cloud Dashboard](https://cloud. .com/),open [Mobile Foundation](https://cloud. .com/catalog/services/mobile-foundation). Click on `Create` as shown below.
 
 ![](doc/source/images/CreateMobileFoundationService.png)
 
@@ -346,7 +346,7 @@ On Windows, you can follow this [Tutorial](https://www.mkyong.com/maven/how-to-i
 
 >NOTE: The `user`, `password` and `url` is Important as it will be used in subsequent steps.
 
-<b>NOTE: Make Sure the Cloud Foundry App for Mobile Foundation-Server gets at least `768MB` of Memory.(Recommended is 1GB) You can verify it by going to `IBM Cloud Dashboard > Resources > Cloud Foundry Apps > MobileFoundation-Server` as shown below.</b>
+<b>NOTE: Make Sure the Cloud Foundry App for Mobile Foundation-Server gets at least `768MB` of Memory.(Recommended is 1GB) You can verify it by going to `  Cloud Dashboard > Resources > Cloud Foundry Apps > MobileFoundation-Server` as shown below.</b>
 
 ![](doc/source/images/MobileFoundationServiceMemory.png)
 
@@ -414,7 +414,7 @@ $ mfpdev adapter deploy MyServer
 
 ##### 7.3.2 Launch MFP dashboard and update adapter configurations
 Launch MFP Dashboard as below:
-  * In the [IBM Cloud dashboard](https://cloud.ibm.com/dashboard/), under `Cloud Foundry Services`, click on the `Mobile Foundation` service you created in [Step 7.2]. The service overview page that gets shown, will have the MFP dashboard embedded within it. You can also open the MFP dashboard in a separate browser tab by appending `/mfpconsole` to the *url* `https://mobilefoundation-xxxx-xxxxx.xx-xx.mybluemix.net`.
+  * In the [  Cloud dashboard](https://cloud. .com/dashboard/), under `Cloud Foundry Services`, click on the `Mobile Foundation` service you created in [Step 7.2]. The service overview page that gets shown, will have the MFP dashboard embedded within it. You can also open the MFP dashboard in a separate browser tab by appending `/mfpconsole` to the *url* `https://mobilefoundation-xxxx-xxxxx.xx-xx.mybluemix.net`.
 >Example: `https://mobilefoundation-xxxx-xxxxx.xx-xx.mybluemix.net/mfpconsole`
 
 > NOTE: `username` & `password` can be found in `Service credentials` in step 7.2.
@@ -645,11 +645,11 @@ Registered app for platform: android
 
 ## Related Content
 
-* [Build a ‘try-and-buy’ mobile application with augmented reality capabilities for a furniture store](https://developer.ibm.com/patterns/augmented-reality-android-mobile-app-interior-decorator/)
+* [Build a ‘try-and-buy’ mobile application with augmented reality capabilities for a furniture store](https://developer. .com/patterns/augmented-reality-android-mobile-app-interior-decorator/)
 
-* [Integrate a virtual mirror with e-commerce products](https://developer.ibm.com/patterns/integrate-a-virtual-mirror-with-e-commerce-products/)
+* [Integrate a virtual mirror with e-commerce products](https://developer. .com/patterns/integrate-a-virtual-mirror-with-e-commerce-products/)
 
-* [A Watson Visual Recognition recommendation example](https://developer.ibm.com/blogs/a-watson-visual-recognition-recommendation-example/)
+* [A Watson Visual Recognition recommendation example](https://developer. .com/blogs/a-watson-visual-recognition-recommendation-example/)
 
 <!-- keep this -->
 ## License
